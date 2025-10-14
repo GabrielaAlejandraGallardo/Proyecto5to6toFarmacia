@@ -7,7 +7,7 @@
 <h1>Ampollas</h1>
 
 
-<table border="5" width="100%">
+<table border="5" width="100%" class="table table-striped">
 <tr>
     <th>ID</th>
     <th>Nombre Medicamento en Ampollas</th>
@@ -26,14 +26,15 @@
     <td>{{ x.cantIngresada }}</td>
   
     <td>
-        <a href="delete/{{ x.id }}">delete</a>
-        <a href="update/{{ x.id }}">update</a>
+        <a class="btn btn-outline-danger"href="delete/{{ x.id }}">Eliminar</a>
+        <a class="btn btn-outline-dark " href="update/{{ x.id }}">Actualizar</a>
+        <a class="btn btn-outline-primary text-info text-uppercase" href="add/">Agregar Ampollas</a>
     </td>
 </tr>
 {% endfor %}
 
 
 <p>
-<a href="add/">Add member</a>
+<a class="btn btn-outline-primary text-info text-uppercase" href="add/">Agregar Ampollas</a>
 </p>
 {% endblock contenido %}}

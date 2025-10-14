@@ -1,13 +1,9 @@
-<<<<<<< HEAD:myworld/medicamentos/urls.py
+
 from django.urls import path
 from . import views
 from django.conf import settings
 from django.contrib.staticfiles.urls import static 
-=======
-"""
-URL configuration for myworld project.
->>>>>>> ab07d57a35c38a095476b4af7dcf6490b302426d:myworld/members/urls.py
-
+""""
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
 Examples:
@@ -24,8 +20,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 urlpatterns = [
-<<<<<<< HEAD:myworld/medicamentos/urls.py
- 
+
     path('', views.inicio, name='inicio'),
     path('index', views.index, name='index'),
     path('add/', views.add, name='add'),
@@ -36,17 +31,3 @@ urlpatterns = [
   
     ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) 
 
-
-
-
-
-
-
-
-=======
-    path('', include('medicamentos.urls')),
-    path('medicamentos/', include('medicamentos.urls')),
-    path('admin/', admin.site.urls),
->>>>>>> ab07d57a35c38a095476b4af7dcf6490b302426d:myworld/members/urls.py
-
-]

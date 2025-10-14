@@ -4,7 +4,7 @@
 {% block contenido %}
 
 <h1>Actualizar Medicamento en Ampollas</h1>
-<form action="updaterecord/{{ mymember.id }}" method="post">
+<form class="text-dark" action="updaterecord/{{ mymember.id }}" method="post">
     {% csrf_token %}
     Nombre del Medicamento:<br>
     <input name="nombreMedicamento" value="{{ mymember.nombreMedicamento }}">
