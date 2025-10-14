@@ -23,8 +23,8 @@ from django.template import loader
 from django.urls import reverse
 from .models import Medicamentos
 
-def violenciaDeGenero(request):
-  return HttpResponse(render(request, 'violenciadegenero.html'))
+
+
 
 def inicio(request):
     return render(request,'inicio.html')

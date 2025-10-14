@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
-{% block titulo %}Actualizar Medicamento{% endblock titulo %}
+{% block titulo %}Actualizar Ampollas{% endblock titulo %}
 {% block contenido %}
 
-<h1>Actualizar Medicamento</h1>
+<h1>Actualizar Medicamento en Ampollas</h1>
 <form action="updaterecord/{{ mymember.id }}" method="post">
     {% csrf_token %}
     Nombre del Medicamento:<br>
