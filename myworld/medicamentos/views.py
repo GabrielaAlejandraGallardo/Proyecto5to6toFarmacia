@@ -47,29 +47,51 @@ def add(request):
 def addrecord(request):
     if request.method == "POST":
         nombre = request.POST['nombreMedicamento']
+        lote= request.POST['lote']
+        vencimiento= request.POST['vencimiento']
+        laboratorio= request.POST['laboratorio']
+        fecha= request.POST['fecha']
+        stockCritico= request.POST['stockCritico']
         cantidad = request.POST['cantidadStock']
         dispensada = request.POST['cantDispensada']
         ingresada = request.POST['cantIngresada']
+        saldoMensual= request.POST['SaldoMensual']
       
         member=DepositoAmpollas(
             nombreMedicamento=nombre,
+            lote=lote,
+            vencimiento=vencimiento,
+            laboratorio=laboratorio,
+            fecha=fecha,
+            stockCritico=stockCritico,
             cantidadStock=cantidad,
             cantDispensada=dispensada,
             cantIngresada=ingresada,
+            SaldoMensual=saldoMensual
         )
         member.save()
         return redirect('/medicamentos/index')
 
 
+
+
+
+
+
+
+
+
+
+
 # ...existing code...
-def delete(request, id):
-  member = DepositoAmpollas.objects.get(id=id)
+def delete(request, idAmpolla):
+  member = DepositoAmpollas.objects.get(idAmpolla=idAmpolla)
   member.delete()
   return HttpResponseRedirect(reverse('index'))
 
 
-def update(request, id):
-  mymember = DepositoAmpollas.objects.get(id=id)
+def update(request, idAmpolla):
+  mymember = DepositoAmpollas.objects.get(id=idAmpolla)
   template = loader.get_template('update.html')
   context = {  'mymember': mymember,  }
   return HttpResponse(template.render(context, request))
