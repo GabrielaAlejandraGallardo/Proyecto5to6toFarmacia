@@ -11,23 +11,35 @@
 <tr>
     <th>ID</th>
     <th>Nombre Medicamento en Ampollas</th>
+    <th>Lote</th>
+    <th>Vencimiento</th>
+    <th>Laboratorio</th>
+    <th>Fecha</th>
+    <th>Stock Critico</th> 
     <th>Cantidad Stock</th>
     <th>Cantidad Dispensada</th>
     <th>Cantidad Ingresada</th>
-    
+    <th>Saldo Mensual</th>
+
     <th>Acciones</th>
 </tr>
-{% for x in mymembers %}
+{% for x in mymember %}
 <tr>
     <td>{{ x.id }}</td>
     <td>{{ x.nombreMedicamento }}</td>
+    <td>{{ x.lote }}</td>
+    <td>{{ x.vencimiento }}</td>        
+    <td>{{ x.laboratorio }}</td>
+    <td>{{ x.fecha }}</td>  
+    <td>{{ x.stockCritico }}</td>
     <td>{{ x.cantidadStock }}</td>
     <td>{{ x.cantDispensada }}</td>
     <td>{{ x.cantIngresada }}</td>
+    <td>{{ x.SaldoMensual }}</td>
   
     <td>
-        <a class="btn btn-outline-danger"href="delete/{{ x.id }}">Eliminar</a>
-        <a class="btn btn-outline-dark " href="update/{{ x.id }}">Actualizar</a>
+        <a class="btn btn-outline-danger"href="delete/{{ x.idAmpollas }}">Eliminar</a>
+        <a class="btn btn-outline-dark " href="update/{{ x.idAmpolla }}">Actualizar</a>
         <a class="btn btn-outline-primary text-info text-uppercase" href="add/">Agregar Ampollas</a>
     </td>
 </tr>

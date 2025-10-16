@@ -9,6 +9,22 @@
     Nombre del Medicamento:<br>
     <input name="nombreMedicamento" value="{{ mymember.nombreMedicamento }}">
     <br><br>
+    Lote:<br>
+    <input name="lote" value="{{ mymember.lote }}">
+
+    <br><br>
+    Vencimiento:<br>
+    <input type="date" name="vencimiento" value="{{ mymember.vencimiento }}">
+    <br><br>
+    Laboratorio:<br>
+    <input name="laboratorio" value="{{ mymember.laboratorio }}">
+    <br><br>
+    Fecha:<br>
+    <input type="date" name="fecha" value="{{ mymember.fecha }}">
+    <br><br>
+     Stock Critico:<br>
+     <input name="stockCritico"  value="{{ mymember.stockCritico }}">
+     <br><br>
     Cantidad en Stock:<br>
     <input name="cantidadStock" value="{{ mymember.cantidadStock }}">
     <br><br>
@@ -17,6 +33,12 @@
     <br><br>
     Cantidad Ingresada:<br>
     <input name="cantIngresada"  value="{{ mymember.cantIngresada }}">
+    <br><br>
+   
+   
+   
+    Saldo Mensual:<br>
+    <input name="SaldoMensual"  value="{{ mymember.SaldoMensual }}">    
     <input type="submit" value="Actualizar">
 </form>
 <form action="updaterecord/{{ mymember.id }}" method="post">
