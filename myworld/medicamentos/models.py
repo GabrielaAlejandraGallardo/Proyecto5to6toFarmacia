@@ -2,7 +2,7 @@ from django.db import models
 
 
 
-class Medicamentos(models.Model):
+class DepositoAmpollas(models.Model):
  
   id = models.AutoField(primary_key=True)  
   nombreMedicamento = models.CharField(max_length=255)
