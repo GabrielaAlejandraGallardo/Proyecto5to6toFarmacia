@@ -59,8 +59,8 @@ def addrecord(request):
         saldoMensual= request.POST['SaldoMensual']
 
         # Convert date strings to date objects
-        vencimiento = datetime.strptime(vencimiento_str, '%Y-%m-%d').date()
-        fecha = datetime.strptime(fecha_str, '%Y-%m-%d').date()
+        vencimiento = datetime.strptime(vencimiento_str, '%Y-%m-%d').date() if vencimiento_str else None
+        fecha = datetime.strptime(fecha_str, '%Y-%m-%d').date() if fecha_str else None
 
         member=DepositoAmpollas(
             nombreMedicamento=nombre,
@@ -89,14 +89,14 @@ def addrecord(request):
 
 
 # ...existing code...
-def delete(request, idAmpolla):
-  member = DepositoAmpollas.objects.get(idAmpolla=idAmpolla)
+def delete(request, id):
+  member = DepositoAmpollas.objects.get(idAmpolla=id)
   member.delete()
   return HttpResponseRedirect(reverse('index'))
 
 
-def update(request, idAmpolla):
-  mymember = DepositoAmpollas.objects.get(id=idAmpolla)
+def update(request, id):
+  mymember = DepositoAmpollas.objects.get(idAmpolla=id)
   template = loader.get_template('update.html')
   context = {  'mymember': mymember,  }
   return HttpResponse(template.render(context, request))
@@ -116,10 +116,10 @@ def updaterecord(request, id):
         saldoMensual = request.POST['SaldoMensual']
 
         # Convert date strings to date objects
-        vencimiento = datetime.strptime(vencimiento_str, '%Y-%m-%d').date()
-        fecha = datetime.strptime(fecha_str, '%Y-%m-%d').date()
+        vencimiento = datetime.strptime(vencimiento_str, '%Y-%m-%d').date() if vencimiento_str else None
+        fecha = datetime.strptime(fecha_str, '%Y-%m-%d').date() if fecha_str else None
 
-        member = DepositoAmpollas.objects.get(id=id)
+        member = DepositoAmpollas.objects.get(idAmpolla=id)
         member.nombreMedicamento = nombre
         member.lote = lote
         member.vencimiento = vencimiento

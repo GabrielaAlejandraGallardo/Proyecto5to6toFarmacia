@@ -4,7 +4,7 @@
 {% block contenido %}
 
 <h1>Actualizar Medicamento en Ampollas</h1>
-<form class="text-dark" action="updaterecord/{{ mymember.id }}" method="post">
+<form class="text-dark" action="updaterecord/{{ mymember.idAmpolla }}" method="post">
     {% csrf_token %}
     Nombre del Medicamento:<br>
     <input name="nombreMedicamento" value="{{ mymember.nombreMedicamento }}">
@@ -33,17 +33,11 @@
     <br><br>
     Cantidad Ingresada:<br>
     <input name="cantIngresada"  value="{{ mymember.cantIngresada }}">
-    <br><br>
-   
-   
-   
+    <br><br> 
     Saldo Mensual:<br>
     <input name="SaldoMensual"  value="{{ mymember.SaldoMensual }}">    
     <input type="submit" value="Actualizar">
 </form>
-<form action="updaterecord/{{ mymember.id }}" method="post">
-{% csrf_token %}
 
-</form>
 
 {% endblock contenido %}
